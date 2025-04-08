@@ -1,6 +1,5 @@
 {
-  "name": "kitchen-sink",
-  "private": true,
+  "name": "@devades/turbo-next-web-app",
   "scripts": {
     "build": "turbo run build",
     "clean": "turbo run clean",
@@ -17,5 +16,23 @@
   "packageManager": "pnpm@8.15.6",
   "engines": {
     "node": ">=18"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:devades/turbo-next-web-app.git"
+  },
+  "keywords": [
+    "next web app",
+    "system",
+    "devade"
+  ],
+  "author": "lara sweeney",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/devades/turbo-next-web-app/issues"
+  },
+  "homepage": "https://github.com/devades/turbo-next-web-app#readme",
+  "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+}
 }

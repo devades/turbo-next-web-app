@@ -15,7 +15,7 @@ export function CounterButton() {
       }}
     >
       <p style={{ margin: "0 0 1.5rem 0" }}>
-        This component is from{" "}
+        This shared common component is from{" "}
         <code
           style={{
             padding: "0.2rem 0.3rem",
