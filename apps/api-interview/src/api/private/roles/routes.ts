@@ -1,10 +1,8 @@
 import express, { Request, Response, Router } from "express";
 import { log } from "@devades/logger";
-
-const router: Router = express.Router();
-
 import { PrismaClient } from '../../../../prisma/app/generated/prisma/client'
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
+const router: Router = express.Router();
 
 router.get("/:userId", async (req: Request, res: Response) => {
 
@@ -35,7 +33,7 @@ router.get("/:userId/role/:roleId", async (req: Request, res: Response) => {
   })
 
   log('userRole by roleId', userRole);
-  
+
   return res.json(userRole); 
 });
 

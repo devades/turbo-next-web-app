@@ -2,36 +2,29 @@
 
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-// import BrandMenu from "./BrandMenu";
-import PopoverGroupMenu from "./PopoverGroupMenu";
-// import LogInLogOut from "./LogInLogOut";
-// import MobileMenu from "./MobileMenu";
-// import { PageWidth } from "../../constants/PageGlobal.const";
-// import ToggleSwitch from "../../ToggleSwitch.component";
-import {
-  ThemeState,
-  useTheme,
-} from "../../hooks/useTheme";
+import LogInLogOut from "./LogInLogOut";
+import { ThemeState, useTheme } from "@repo/ui/hooks/useTheme";
+import {BrandMenu} from "@repo/ui/navigation/components/BrandMenu";
+import {ToggleDarkModeSwitch} from "@repo/ui/navigation/components/ToggleDarkModeSwitch";
 
 type Props = {
   tag: "header" | "footer";
 };
-export function Navigation({ tag }: Props) {
+
+const Navigation = ({ tag }: Props) => {
   const { theme }: ThemeState = useTheme();
 
   const [mobileMenuOpen, setMobileMenuOpen] =
     useState(false);
 
   return (
-    <div className={theme + ` flex`}>
+    <div className={theme + ` flex w-full`}>
       <nav
         aria-label="Global"
-        // max-w-[${PageWidth}]
-        className={`mx-auto flex flex-row w-full items-center justify-between py-4`}>
-            <div className="flex max-w-[1250px]">
-        {/* <BrandMenu /> */}
+        className={`mx-auto flex w-full max-w-[1250px] items-center justify-between py-4`}>
+        <BrandMenu />
         <div className="flex lg:hidden">
-          {/* <ToggleSwitch /> */}
+          <ToggleDarkModeSwitch />
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
@@ -45,13 +38,15 @@ export function Navigation({ tag }: Props) {
         </div>
 
         <div className="hidden lg:flex lg:justify-between">
-          <PopoverGroupMenu tag={tag} />
+          {/* <PopoverGroupMenu tag={tag} /> */}
         </div>
 
-        {/* <div className="hidden lg:flex  lg:justify-end">
-          <ToggleSwitch />
+        <div className="hidden lg:flex lg:justify-end gap-2">
+            
+          <ToggleDarkModeSwitch />
+          <div className="ml-0 lg:ml-6">
           <LogInLogOut />
-        </div> */}
+          </div>
         </div>
       </nav>
 
@@ -62,3 +57,4 @@ export function Navigation({ tag }: Props) {
     </div>
   );
 };
+export default Navigation;

@@ -1,15 +1,26 @@
 import express, { Request, Response, Router } from "express";
+import { PrismaClient } from '../../../../prisma/app/generated/prisma/client'
 
+const prisma = new PrismaClient()
 const router: Router = express.Router();
 
-router.put("/:blogPostId", (req: Request, res: Response) => {
-  const blogPostId = req.params.blogPostId;
-  return res.json({message:`blog/${blogPostId}`});
+router.put("/:blogPostId", async (req: Request, res: Response) => {
+  const {blogPostId} = req.params;
+  const updatedPost = await prisma.post.update({
+    where: {
+      id: Number(blogPostId),
+    },
+    data: {...req.body}
+  })
+  return res.json(updatedPost); 
 });
 
-router.post("/blog", (req: Request, res: Response) => {
-  const newBlogPost = req.body;
-  res.status(201).send(newBlogPost);
+router.post("/blog", async (req: Request, res: Response) => {
+  const blogPost = req.body;
+  const newBlogPost = await prisma.post.create({
+    data: {...blogPost}
+  })
+  return res.status(201).send(newBlogPost); 
 });
 
 export default router;

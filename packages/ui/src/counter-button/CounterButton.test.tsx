@@ -1,6 +1,6 @@
 import { describe, it } from "@jest/globals";
 import { createRoot } from "react-dom/client";
-import { CounterButton } from ".";
+import { CounterButton } from "./CounterButton";
 
 describe("CounterButton", () => {
   it("renders without crashing", () => {

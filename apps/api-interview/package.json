@@ -10,7 +10,7 @@
     "check-types": "tsc --noEmit",
     "lint": "eslint src/ --max-warnings 0",
     "test": "jest --detectOpenHandles",
-    "dev:seed:db": "rm -rf ./prisma/migrations && rm -rf ./prisma/db && prisma generate && prisma migrate dev --name init"
+    "dev:seed:db": "rm -rf ./prisma/app/generated && rm -rf ./prisma/db && prisma generate && prisma migrate dev --name init"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

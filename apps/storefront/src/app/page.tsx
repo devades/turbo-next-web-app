@@ -1,12 +1,9 @@
-// "use client";
-
 import "./styles.css";
 
 import { log } from "@devades/logger";
-import { Link } from "@repo/ui/link";
-import { CounterButton } from "@repo/ui/counter-button";
-import { Header } from "@devades/design-system-ui/header";
-// import { useEffect, useState } from "react";
+import { Link } from "@repo/ui/link/Link";
+import { CounterButton } from "@repo/ui/counter-button/CounterButton";
+import { Header } from "@repo/ui/header/Header";
 
 export const metadata = {
   title: "Store | Kitchen Sink",

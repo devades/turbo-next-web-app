@@ -1,14 +1,8 @@
 import express, { Request, Response, Router } from "express";
-// const { PrismaClient } = require('@prisma/client')
-// import { PrismaClient } from '@prisma/client';
-
-// from '@prisma/client'
 import { PrismaClient } from '../../../../prisma/app/generated/prisma/client'
 import { log } from "@devades/logger";
+
 const prisma = new PrismaClient()
-
-// const prisma = new PrismaClient(); 
-
 const router: Router = express.Router();
 
 router.get("/", async (_req: Request, res: Response) => {
