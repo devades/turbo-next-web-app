@@ -5,10 +5,17 @@ node_modules
 .next
 dist
 dist-ssr
-*.local
-.env
-.env.*
-*.env.*
 .cache
 server/dist
 public/dist
+
+# Environment files
+.env
+.env.*
+*.env.*
+*.local
+
+# Prisma databases and generated directories
+*.db
+**/prisma/app/generated
+**/generated/prisma/
